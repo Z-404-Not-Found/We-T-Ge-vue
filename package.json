@@ -1,0 +1,38 @@
+{
+    "name": "we-t-ge-vue",
+    "version": "0.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "run-p type-check \"build-only {@}\" --",
+        "preview": "vite preview",
+        "build-only": "vite build",
+        "type-check": "vue-tsc --build --force"
+    },
+    "dependencies": {
+        "pinia": "^2.2.2",
+        "pinia-plugin-persistedstate": "^4.0.1",
+        "vant": "^4.9.4",
+        "vconsole": "^3.15.1",
+        "vue": "^3.4.29",
+        "vue-router": "^4.4.5"
+    },
+    "devDependencies": {
+        "@tsconfig/node20": "^20.1.4",
+        "@types/node": "^20.14.5",
+        "@vant/auto-import-resolver": "^1.2.1",
+        "@vitejs/plugin-vue": "^5.0.5",
+        "@vitejs/plugin-vue-jsx": "^4.0.0",
+        "@vue/tsconfig": "^0.5.1",
+        "autoprefixer": "^10.4.20",
+        "npm-run-all2": "^6.2.0",
+        "postcss": "^8.4.45",
+        "tailwindcss": "^3.4.10",
+        "typescript": "~5.4.0",
+        "unplugin-auto-import": "^0.18.2",
+        "unplugin-vue-components": "^0.27.4",
+        "vite": "^5.3.1",
+        "vue-tsc": "^2.0.21"
+    }
+}
