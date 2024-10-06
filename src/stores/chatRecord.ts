@@ -9,6 +9,8 @@ export const useChatRecordStore = defineStore("chatRecord", {
                     onTop: false,
                     // recordCount记录该角色上下文数
                     recordCount: 0,
+                    // 请求最大记录数
+                    maxRecordCount: 10,
                     name: "t哥",
                     avatar: "assets/avatar/chatGPT.png",
                     description:
@@ -25,6 +27,7 @@ export const useChatRecordStore = defineStore("chatRecord", {
                     id: "1",
                     onTop: false,
                     recordCount: 0,
+                    maxRecordCount: 10,
                     name: "聊天敷衍机",
                     avatar: "assets/avatar/chat.png",
                     description:
@@ -41,6 +44,7 @@ export const useChatRecordStore = defineStore("chatRecord", {
                     id: "2",
                     onTop: false,
                     recordCount: 0,
+                    maxRecordCount: 10,
                     name: "翻译官",
                     avatar: "assets/avatar/translate.png",
                     description:
@@ -57,6 +61,7 @@ export const useChatRecordStore = defineStore("chatRecord", {
                     id: "3",
                     onTop: false,
                     recordCount: 0,
+                    maxRecordCount: 10,
                     name: "中国亲妈",
                     avatar: "assets/avatar/chineseMom.jpg",
                     description: "这个角色会扮演你的亲妈",
@@ -72,6 +77,7 @@ export const useChatRecordStore = defineStore("chatRecord", {
                     id: "4",
                     onTop: false,
                     recordCount: 0,
+                    maxRecordCount: 10,
                     name: "中国亲妈（已黑化）",
                     avatar: "assets/avatar/chineseMom.jpg",
                     description: "这个角色会扮演你的亲妈（黑化版）",
@@ -87,6 +93,7 @@ export const useChatRecordStore = defineStore("chatRecord", {
                     id: "5",
                     onTop: false,
                     recordCount: 0,
+                    maxRecordCount: 10,
                     name: "故事王",
                     avatar: "assets/avatar/story.jpg",
                     description:
@@ -103,6 +110,7 @@ export const useChatRecordStore = defineStore("chatRecord", {
                     id: "6",
                     onTop: false,
                     recordCount: 0,
+                    maxRecordCount: 8,
                     name: "文字冒险游戏",
                     avatar: "assets/avatar/game.jpg",
                     description:
@@ -119,6 +127,7 @@ export const useChatRecordStore = defineStore("chatRecord", {
                     id: "7",
                     onTop: false,
                     recordCount: 0,
+                    maxRecordCount: 10,
                     name: "励志师",
                     avatar: "assets/avatar/liZhiShi.png",
                     description:
@@ -135,6 +144,7 @@ export const useChatRecordStore = defineStore("chatRecord", {
                     id: "8",
                     onTop: false,
                     recordCount: 0,
+                    maxRecordCount: 10,
                     name: "英语四六级陪练",
                     avatar: "assets/avatar/cet.png",
                     description:
@@ -151,6 +161,7 @@ export const useChatRecordStore = defineStore("chatRecord", {
                     id: "9",
                     onTop: false,
                     recordCount: 0,
+                    maxRecordCount: 10,
                     name: "小🍠写手",
                     avatar: "assets/avatar/redBook.jpg",
                     description:
@@ -201,12 +212,11 @@ export const useChatRecordStore = defineStore("chatRecord", {
         },
         add2RecordCountById(id: string) {
             const chatRecord = this.getChatRecordById(id);
-            // 10是单次上下文最大长度 1是system
             if (chatRecord) {
-                if (chatRecord.recordCount < 10 + 1) {
+                if (chatRecord.recordCount < chatRecord.maxRecordCount + 1) {
                     chatRecord.recordCount += 2;
                 } else {
-                    chatRecord.recordCount = 10 + 1;
+                    chatRecord.recordCount = chatRecord.maxRecordCount + 1;
                 }
             } else {
                 console.log(`未找到 ID 为 ${id} 的聊天记录。`);

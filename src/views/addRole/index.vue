@@ -91,6 +91,7 @@ const chatRecord = ref({
     onTop: false,
     // recordCount记录该角色上下文数
     recordCount: 0,
+    maxRecordCount: 10,
     name: "",
     avatar: "assets/avatar/default.jpg",
     description: "",

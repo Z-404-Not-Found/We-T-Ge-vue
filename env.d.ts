@@ -10,6 +10,7 @@ interface chatRecord {
     onTop: boolean;
     // recordCount记录该角色上下文数
     recordCount: number;
+    maxRecordCount: number;
     name: string;
     avatar: string;
     description: string;
